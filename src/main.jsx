@@ -5,10 +5,15 @@ import './styles/index.css'
 
 import { ThemeProvider } from "@material-tailwind/react";
 
+import { store } from "./store/configureStore"
+import { Provider } from "react-redux"
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>,
 )
